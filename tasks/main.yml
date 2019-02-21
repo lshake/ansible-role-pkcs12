@@ -9,5 +9,6 @@
     privatekey_path: "{{ pkcs12_src_private_key }}"
     certificate_path: "{{ pkcs12_src_certificate }}"
     ca_certificates: "{{ pkcs12_src_ca_certs | default(omit) }}"
+    passphrase: "{{ pkcs12_passphrase }}"
     state: present
     mode: 0600
