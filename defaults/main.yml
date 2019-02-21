@@ -4,3 +4,4 @@ pkcs12_src_private_key: /etc/pki/tls/private/{{ ansible_fqdn }}.key
 pkcs12_src_certificate: /etc/pki/tls/certs/{{ ansible_fqdn }}.crt
 pkcs12_dst_keystore: ~/{{ ansible_fqdn }}.p12
 pkcs12_friendly_name: "{{ ansible_fqdn }}"
+pkcs12_passphrase: "changeit"
