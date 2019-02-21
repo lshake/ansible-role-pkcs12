@@ -1,0 +1,33 @@
+# Compiled Python files
+*.pyc
+
+# Ansible retry files
+*.retry
+
+# Molecule log files
+*.log
+
+# Tox venvs and logs
+.tox
+venv
+
+# vscode 
+.vscode
+
+# vagrant
+.vagrant
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+roles/*
+!roles/requirements*.yml

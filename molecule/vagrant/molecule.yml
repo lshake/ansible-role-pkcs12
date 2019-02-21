@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    box: shakey/rhel7.6
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: vagrant
+verifier:
+  name: testinfra
+  options:
+    sudo: true
+  directory: ../resources/tests/
+  lint:
+    name: flake8

@@ -1,0 +1,13 @@
+---
+# tasks file for lshake.pkcs12
+
+- name: generate pkcs12 file
+  openssl_pkcs12:
+    action: export
+    path: "{{ pkcs12_dst_keystore }}"
+    friendly_name: "{{ pkcs12_friendly_name }}"
+    privatekey_path: "{{ pkcs12_src_private_key }}"
+    certificate_path: "{{ pkcs12_src_certificate }}"
+    ca_certificates: "{{ pkcs12_src_ca_certs | default(omit) }}"
+    state: present
+    mode: 0600

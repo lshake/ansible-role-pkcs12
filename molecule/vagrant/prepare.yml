@@ -1,0 +1,26 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: true
+  become: true
+
+  roles:
+    - geerlingguy.repo-epel
+
+  tasks:
+    - name: install openssl and pip
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - openssl
+          - python2-pip
+
+    - name: remove the system pyOpenSSL package
+      yum:
+        name: pyOpenSSL
+        state: absent
+        autoremove: false
+
+    - name: create the self signed cert
+      import_tasks: ../resources/playbooks/create_selfsigned_certs.yml

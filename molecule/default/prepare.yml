@@ -1,0 +1,9 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: true
+  become: true
+  tasks:
+
+    - name: create the self signed cert
+      import_tasks: ../resources/playbooks/create_selfsigned_certs.yml
